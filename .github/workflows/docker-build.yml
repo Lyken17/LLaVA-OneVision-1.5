@@ -49,7 +49,7 @@ jobs:
             # Tag with tag name for tag pushes (e.g., v1.0.0)
             type=ref,event=tag
             # Tag with commit SHA (short form)
-            type=sha,prefix={{branch}}-,format=short
+            type=sha,format=short
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5

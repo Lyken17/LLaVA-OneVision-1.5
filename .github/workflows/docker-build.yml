@@ -42,14 +42,12 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
+            # Always tag as llava_megatron:25.04 (matching README)
+            type=raw,value=llava_megatron:25.04
             # Tag as 'latest' for main branch
             type=raw,value=latest,enable={{is_default_branch}}
-            # Tag with branch name for branch pushes
-            type=ref,event=branch
             # Tag with tag name for tag pushes (e.g., v1.0.0)
             type=ref,event=tag
-            # Tag with PR number for pull requests
-            type=ref,event=pr
             # Tag with commit SHA (short form)
             type=sha,prefix={{branch}}-,format=short
 

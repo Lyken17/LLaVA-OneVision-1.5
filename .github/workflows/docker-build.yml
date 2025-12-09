@@ -31,8 +31,10 @@ jobs:
 
       - name: list storage info
         run: |
-          # https://github.com/orgs/community/discussions/25678
           df -h 
+      
+      - name: list storage info
+        run: |
           du -h -d 1
           
       - name: Checkout repository

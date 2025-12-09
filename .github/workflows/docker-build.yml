@@ -17,13 +17,17 @@ env:
 jobs:
   build-and-push:
     timeout-minutes: 120
-    # runs-on: ubuntu-latest
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
+    # runs-on: self-hosted
     permissions:
       contents: read
       packages: write
 
     steps:
+      - name: cleanup action runner storage
+        run: |
+          # https://github.com/orgs/community/discussions/25678
+          rm -rf /opt/hostedtoolcache
       - name: Checkout repository
         uses: actions/checkout@v4
 

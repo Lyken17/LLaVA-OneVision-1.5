@@ -35,7 +35,7 @@ jobs:
       
       - name: list storage info
         run: |
-          du -h -d 1 /
+          du -h -d 2 | sort -h -r
           
       - name: Checkout repository
         uses: actions/checkout@v4

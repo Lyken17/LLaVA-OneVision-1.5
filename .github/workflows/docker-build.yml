@@ -27,7 +27,13 @@ jobs:
       - name: cleanup action runner storage
         run: |
           # https://github.com/orgs/community/discussions/25678
-          rm -rf /opt/hostedtoolcache
+          rm -rfv /opt/hostedtoolcache
+
+      - name: list storage info
+        run: |
+          # https://github.com/orgs/community/discussions/25678
+          df -h 
+          
       - name: Checkout repository
         uses: actions/checkout@v4
 

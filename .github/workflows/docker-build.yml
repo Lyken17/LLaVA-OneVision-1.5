@@ -16,7 +16,7 @@ env:
 
 jobs:
   build-and-push:
-    timeout-minutes: 120
+    timeout-minutes: 1200
     runs-on: ubuntu-latest
     # runs-on: self-hosted
     permissions:
@@ -33,6 +33,7 @@ jobs:
         run: |
           # https://github.com/orgs/community/discussions/25678
           df -h 
+          du -h -d 1
           
       - name: Checkout repository
         uses: actions/checkout@v4
